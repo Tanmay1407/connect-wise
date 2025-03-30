@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  mysql:
+    image: mysql
+    container_name: local-mysql-server
+    environment:
+      MYSQL_ROOT_PASSWORD: dbcon
+      MYSQL_DATABASE: connect_wise
+      MYSQL_USER: tanmay
+      MYSQL_PASSWORD: dbcon
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+
+volumes:
+  db_data:
+    driver: local

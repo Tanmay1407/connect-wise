@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+    <head>
+        <title th:text="${loggedInUser.name}+' | Connect Wise'">Dash</title>
+    </head>
+<body>
+    
+    <div id="content">
+        <div th:if="${loggedInUser}">
+            <div th:replace="~{user/sidebar :: sidebar}"></div>
+        </div>
+        <div class="border sm:pl-64 pt-20 flex justify-center flex-col items-center text-2xl">
+            <h1>This is Dashboard Page</h1>
+        </div>
+    </div>
+
+    <script>console.log("Profile Page Logged In")</script>
+</body>
+</html>

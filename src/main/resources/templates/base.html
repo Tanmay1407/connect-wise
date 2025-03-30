@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" th:fragment="parent(content,title,script)">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">Connect Wise</title>
+    <script>
+        // Inline script to apply the theme as soon as possible
+        const storedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.classList.add(storedTheme);
+      </script>
+    <link rel="icon" type="image/x-icon" data-th-href="@{'/images/connect.png'}">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}">
+    <link rel="stylesheet" data-th-href="@{'/css/style.css'}">
+
+</head>
+
+<body class="dark:bg-gray-900 bg-gray-100 dark:text-white">
+    <!-- Header -->
+    <div th:if="${loggedInUser}">
+        <div th:replace="~{user/user_navbar :: user-navbar}"></div>
+    </div>
+    <div th:unless="${loggedInUser}">
+        <div th:replace="~{navBar :: navbar}"></div>
+    </div>
+
+  
+
+    <!-- Main Content -->
+    <div class="mx-8 my-4">
+        <div th:replace="${content}"></div>
+    </div>
+
+    <!-- Footer     -->
+    <!-- <footer class="p-4"> Copyright 2024 Tanmay Patel</footer> -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script th:unless="${loggedInUser}" th:src="@{'js/script.js'}"></script>
+    <script th:if="${loggedInUser}" th:src="@{'../js/script.js'}"></script>
+    <th:block th:replace="${script}"></th:block>
+</body>
+
+</html>

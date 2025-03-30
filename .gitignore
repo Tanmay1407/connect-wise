@@ -1,0 +1,43 @@
+# IntelliJ IDEA specific files
+.idea/
+*.iml
+*.iws
+
+# Java build files
+/target/
+/.mvn/
+!/.mvn/wrapper/maven-wrapper.jar
+
+# Logs and temporary files
+/logs/
+*.log
+hs_err_pid*
+
+# Spring Boot specific files
+/*.jar
+/*.war
+/*.ear
+
+# Node and Tailwind CSS related files
+/node_modules/
+/.parcel-cache/
+/.next/
+
+# Dependency directories
+/.gradle/
+/build/
+/out/
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Miscellaneous
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

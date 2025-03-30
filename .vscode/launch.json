@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "ConnectWiseApplication",
+            "request": "launch",
+            "mainClass": "com.pateltanmay.connectwise.ConnectWiseApplication",
+            "projectName": "connectwise"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ConnectWiseApplication<connectWise>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.pateltanmay.connectWise.ConnectWiseApplication",
+            "projectName": "connectWise",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

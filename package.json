@@ -1,0 +1,15 @@
+{
+  "name": "connectwise",
+  "version": "1.0.0",
+  "description": "Project for storing & managing contacts on cloud",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tanmay",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.16"
+  }
+}
